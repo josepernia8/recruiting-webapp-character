@@ -1,0 +1,99 @@
+.btn {
+  align-items: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 500;
+  justify-content: center;
+  outline: none;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* Sizes */
+.btn-small {
+  font-size: 0.875rem;
+  height: 32px;
+  padding: 0 12px;
+}
+
+@media screen and (max-width: 600px) {
+  .btn-small {
+    font-size: 0.875rem;
+    height: 24px;
+    padding: 0 8px;
+  } 
+}
+
+.btn-medium {
+  font-size: 1rem;
+  height: 40px;
+  padding: 0 16px;
+}
+
+.btn-large {
+  font-size: 1.125rem;
+  height: 48px;
+  padding: 0 24px;
+}
+
+/* Variants */
+.btn-primary {
+  background: var(--control-primary-color);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--control-primary-hover-color);
+}
+
+.btn-secondary {
+  background: var(--control-secondary-color);
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--control-secondary-hover-bg-color);
+}
+
+/* Loading state */
+.btn.loading {
+  color: transparent;
+  padding: 0 24px;
+  pointer-events: none;
+}
+
+.btn-loader {
+  animation: spin 1s linear infinite;
+  border: 2px solid var(--base-text-color);
+  border-radius: 50%;
+  border-top-color: currentColor;
+  height: 16px;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  position: absolute;
+  top: 50%;
+  width: 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Screen reader only */
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

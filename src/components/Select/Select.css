@@ -1,0 +1,87 @@
+.select-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+
+.select-label {
+  color: var(--base-text-color);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.custom-select {
+  appearance: none;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  outline: none;
+  padding-right: 32px;
+  position: relative;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.custom-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* Sizes */
+.select-small {
+  font-size: 0.875rem;
+  height: 32px;
+  padding-left: 12px;
+}
+
+.select-medium {
+  font-size: 1rem;
+  height: 40px;
+  padding-left: 16px;
+}
+
+.select-large {
+  font-size: 1.125rem;
+  height: 48px;
+  padding-left: 24px;
+}
+
+/* Variants */
+.select-primary {
+  background-color: var(--control-primary-color);
+  color: white;
+}
+
+.select-primary:hover:not(:disabled) {
+  background-color: var(--control-primary-hover-color);
+}
+
+.select-secondary {
+  background-color: var(--control-secondary-color);
+  color: white;
+}
+
+.select-secondary:hover:not(:disabled) {
+  background-color: var(--control-secondary-hover-bg-color);
+}
+
+/* Replace the background image with a pseudo-element */
+.select-wrapper::after {
+  content: '▼';
+  font-size: 0.85rem;
+  pointer-events: none;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Focus state */
+.custom-select:focus {
+  box-shadow: 0 0 0 2px rgba(97, 218, 251, 0.2);
+}
